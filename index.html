@@ -1,41 +1,77 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <title>Sobre mim</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-        body{
-            background-color:rgb(72, 61, 50);
-            font-family: 'Times New Roman', Times, serif;
-            color: rgb(251, 255, 192);
-            font-size: x-large;
-        }
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-        .photocontainer{
-            border: 4px solid rgb(251, 255, 192)
-        }
-    </style>
-</head> 
-<body>
-    <h1>Sobre mim</h1>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Syne:wght@800&display=swap" rel="stylesheet">
 
-    <img src="https://github.com/otavio-alv.png" 
-         class="photocontainer"
-         alt="Foto de perfil" 
-         width="200" 
-         style="border-radius: 15%;">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-lima: #DBFF36;
+      --color-fundo: #0E0E0E;
 
-    <p>Meu nome é Otávio Alves Gomes</p>
-    <p>Estudante de Ciência da Computação na Universidade Federal 
-        de Ouro Preto (UFOP), com foco em Engenharia de Software, 
-        Segurança e Sistemas Distribuídos.</p>
+      --font-display: "Syne", sans-serif;
+      --font-mono: "IBM Plex Mono", monospace;
+    }
 
-    <h2>Meus interesses</h2>
-    <ul>
-        <li>Criptografia aplicada</li>
-        <li>Identidades digitais</li>
-        <li>Sistemas Distribuídos</li>
-        <li>Privacidade e governança</li>
-    </ul>
+    @utility nav-link {
+      @apply px-4 py-2 underline-offset-6 hover:underline;
+    }
+
+    @utility nav-link_active {
+      @apply text-lima underline;
+    }
+
+    @utility grid_int {
+      @apply border-2 border-lima text-lima text-center py-2 text-xs
+               hover:bg-lima hover:text-black transition;
+
+    }
+  </style>
+</head>
+
+<body class="bg-fundo text-white font-mono font-medium min-h-screen">
+
+  <div aria-hidden="true"
+       class="absolute top-0 inset-0 h-screen -z-10 pointer-events-none
+              bg-[url('img/fundo.png')] bg-cover bg-center bg-no-repeat
+              opacity-12 "></div>
+
+  <nav class="flex justify-center gap-6 pt-6 text-sm" aria-label="Principal">
+    <a href="#inicio" class="nav-link nav-link_active" aria-current="page">início</a>
+    <a href="#sobre_mim" class="nav-link">sobre_mim</a>
+    <a href="#projetos" class="nav-link">projetos</a>
+    <a href="#contato" class="nav-link">contato</a>
+  </nav>
+
+  <section id="inicio" class="mx-auto max-w-6xl px-6 py-16
+                  flex flex-col md:flex-row items-center justify-center gap-12">
+
+    <img src="img/disquete.png" alt="Disquete"
+         class="w-96 md:w-102">
+
+    <div>
+      <h1 class="text-7xl md:text-7xl font-display font-extrabold text-lima leading-none">
+        OTÁVIO<br>ALVES
+      </h1>
+      <p class="mt-8 max-w-md text-justify hyphens-auto">
+        Graduando em Ciência da Computação apaixonado por segurança,
+        identidades seguras e criptografia pós-quântica!
+      </p>
+
+      <div class="mt-8 grid grid-cols-2 gap-3 max-w-md">
+        <span class="grid_int">CYBERSECURITY</span>
+        <span class="grid_int">DIDs | VCs</span>
+        <span class="grid_int">PQCs</span>
+        <span class="grid_int">LINUX</span>
+      </div>
+    </div>
+  </section>
 </body>
+
+</html>
